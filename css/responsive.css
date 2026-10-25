@@ -211,20 +211,8 @@
   .pc .fb {
     padding: 15px 16px;
   }
-  .tl,
   .skills {
     grid-template-columns: 1fr;
-  }
-  .ti:nth-child(-n + 2)::before,
-  .ti:nth-last-child(-n + 2)::before {
-    top: 0;
-    bottom: 0;
-  }
-  .ti:first-child::before {
-    top: 50%;
-  }
-  .ti:last-child::before {
-    bottom: 50%;
   }
   .ti .logo {
     width: 37px;
@@ -328,6 +316,9 @@
     padding-top: 6px;
     padding-bottom: 50px;
   }
+  #feat {
+    display: none !important;
+  }
   .sh {
     margin-bottom: 20px;
   }
@@ -373,7 +364,7 @@
   .pgrid {
     grid-template-columns: 1fr;
     gap: 22px;
-    margin-top: 26px;
+    margin-top: 0;
   }
   .pc .prev {
     padding: 58px 20px 18px;
@@ -448,6 +439,33 @@
   .close-btn {
     top: -13px;
     right: -8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tl {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  /* Reset all items to have full-height lines */
+  .ti::before,
+  .ti:nth-child(1)::before,
+  .ti:nth-child(4)::before,
+  .ti:nth-child(5)::before,
+  .ti:nth-child(8)::before {
+    top: 0;
+    bottom: 0;
+  }
+
+  /* Crop top line ONLY for the first item */
+  .ti:first-child::before {
+    top: 50%;
+  }
+
+  /* Crop bottom line ONLY for the last item */
+  .ti:last-child::before {
+    bottom: 50%;
   }
 }
 

@@ -1,6 +1,5 @@
 .tl {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-count: 2;
   column-gap: 64px;
   padding: 0;
   list-style: none;
@@ -13,6 +12,7 @@
   align-items: center;
   padding: 20px 0 20px 29px;
   min-height: 135px;
+  break-inside: avoid;
 }
 
 .ti::before {
@@ -25,11 +25,13 @@
   background: var(--ac2);
 }
 
-.ti:nth-child(-n + 2)::before {
+.ti:nth-child(1)::before,
+.ti:nth-child(5)::before {
   top: 50%;
 }
 
-.ti:nth-last-child(-n + 2)::before {
+.ti:nth-child(4)::before,
+.ti:nth-child(8)::before {
   bottom: 50%;
 }
 
