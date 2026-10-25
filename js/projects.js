@@ -86,8 +86,16 @@ const allProjects = [
   },
 ];
 
+
 const featuredProjects = allProjects.filter((project) => project.hasRepo);
 let activeFeaturedIdx = 0;
+
+function getVisibleProjects() {
+  return window.matchMedia("(max-width: 600px)").matches
+    ? allProjects
+    : featuredProjects;
+}
+
 
 function buildActionButtons(project) {
   const links = [];
@@ -97,7 +105,9 @@ function buildActionButtons(project) {
 }
 
 export function renderProjects(direction = 0) {
-  const current = featuredProjects[activeFeaturedIdx];
+  const visibleProjects = getVisibleProjects();
+  activeFeaturedIdx = mod(activeFeaturedIdx, visibleProjects.length);
+  const current = visibleProjects[activeFeaturedIdx];
   $("#fT").textContent = current.title;
   $("#fD").textContent = current.desc;
   $("#fG").innerHTML = current.tags.map((tag) => `<span>${tag}</span>`).join("");
@@ -143,7 +153,10 @@ export function renderProjects(direction = 0) {
 
   document.querySelectorAll(".project-select").forEach((button) => {
     button.onclick = () => {
-      activeFeaturedIdx = featuredProjects.findIndex((project) => project.id === Number(button.dataset.projectId));
+      const visibleProjects = getVisibleProjects();
+      activeFeaturedIdx = visibleProjects.findIndex(
+        (project) => project.id === Number(button.dataset.projectId),
+      );
       renderProjects(1);
       $("#fPh").focus({ preventScroll: true });
       $("#projects").scrollIntoView({ behavior: motionPreference.matches ? "auto" : "smooth" });
@@ -152,11 +165,13 @@ export function renderProjects(direction = 0) {
 }
 
 $("#feat .pv").onclick = () => {
-  activeFeaturedIdx = mod(activeFeaturedIdx - 1, featuredProjects.length);
+  activeFeaturedIdx = mod(activeFeaturedIdx - 1, getVisibleProjects().length);
   renderProjects(-1);
 };
+
 $("#feat .nx").onclick = () => {
-  activeFeaturedIdx = mod(activeFeaturedIdx + 1, featuredProjects.length);
+  activeFeaturedIdx = mod(activeFeaturedIdx + 1, getVisibleProjects().length);
   renderProjects(1);
 };
+
 renderProjects();

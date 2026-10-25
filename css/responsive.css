@@ -317,6 +317,9 @@
     padding-bottom: 50px;
   }
   #feat {
+    display: block !important;
+  }
+  #pgrid {
     display: none !important;
   }
   .sh {
