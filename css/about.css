@@ -1,0 +1,99 @@
+.car {
+  position: relative;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car .icon-btn {
+  z-index: 15;
+  box-shadow: 0 3px 0 #3329580c;
+}
+
+.stage {
+  position: absolute;
+  inset: 0 35px;
+}
+
+.slide {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 66%;
+  height: 324px;
+  margin-left: -33%;
+  border-radius: 10px;
+  border: 6px solid var(--card);
+  outline: 1px solid var(--bd);
+  overflow: hidden;
+  transition: transform .65s cubic-bezier(.16, 1, .3, 1), opacity .4s;
+  background: var(--card);
+}
+
+.edu {
+  display: grid;
+  gap: 10px;
+}
+
+.edu > small {
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--mut);
+  margin-top: 2px;
+}
+
+.edu > small:not(:first-child) {
+  margin-top: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 18px;
+}
+
+.row h4 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.row em {
+  font-size: 10px;
+  font-style: normal;
+  color: var(--mut);
+  display: block;
+  margin-top: 3px;
+}
+
+.row .tags {
+  margin-top: 9px;
+  gap: 5px;
+}
+
+.row .tags span {
+  font-size: 9px;
+  padding: 3px 7px;
+}
+
+.edu .logo {
+  background: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--bd);
+}
+
+.edu .logo .school-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}

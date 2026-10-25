@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button, a, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a {
+  touch-action: manipulation;
+}
+
+a, button {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ac);
+  outline-offset: 5px;
+}
+
+.page-shell {
+  width: min(var(--shell-width), calc(100% - var(--gutter) * 2));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: 64px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.grid2 > * {
+  min-width: 0;
+}
+
+.work-band {
+  background: var(--bg2);
+  border-block: 1px solid var(--bd);
+}
+
+#projects {
+  padding-top: 12px;
+  padding-bottom: 76px;
+}
+
+#certs {
+  padding-top: 8px;
+  padding-bottom: 76px;
+}
+
+.ic {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+  display: block;
+  pointer-events: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  padding: 12px 20px;
+  background: var(--card);
+  z-index: 400;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+
+.click-sparks-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999999;
+}

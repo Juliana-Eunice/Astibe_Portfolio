@@ -1,0 +1,160 @@
+.sh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.sh .sec {
+  margin: 0;
+}
+
+.link {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--ink);
+  text-underline-offset: 4px;
+}
+
+.link:hover {
+  color: var(--ac);
+}
+
+.feat {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--sh);
+}
+
+.prev {
+  position: relative;
+  display: grid;
+  gap: 22px;
+  padding: 66px 28px 24px;
+  background: var(--chip);
+}
+
+.prev .ph.wide {
+  position: relative;
+  inset: auto;
+  aspect-ratio: 16 / 5.5;
+  margin-inline: 36px;
+  border-radius: 6px;
+  min-height: 0;
+  border: 1px solid var(--bd);
+}
+
+.prev .preview-img {
+  object-fit: contain;
+  background: #fff;
+}
+
+.pa {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  z-index: 3;
+}
+
+.prev .icon-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  margin-top: -21px;
+  background: var(--card);
+}
+
+.prev h4 {
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -.7px;
+}
+
+.fb {
+  padding: 23px 28px;
+}
+
+.fb > p:first-child {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--mut);
+}
+
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.pc {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pc .prev {
+  padding: 58px 22px 18px;
+  gap: 18px;
+  background: var(--chip);
+}
+
+.pc:nth-child(3n + 1) .prev {
+  background: var(--pk);
+}
+
+.pc:nth-child(3n + 2) .prev {
+  background: var(--footer);
+}
+
+.pc .prev .ph.wide {
+  aspect-ratio: 16 / 6.3;
+  margin-inline: 0;
+}
+
+.pc h4 {
+  font-size: 17px;
+  letter-spacing: -.3px;
+  min-height: 48px;
+}
+
+.project-select {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-select:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--ac2);
+  text-underline-offset: 4px;
+}
+
+.pc .fb {
+  padding: 18px 22px;
+  border-top: 1px solid var(--bd);
+  flex: 1;
+}
+
+.pc .fb > p:first-child {
+  font-size: 11px;
+}
+
+.pc .tags span {
+  font-size: 10px;
+  padding: 3px 9px;
+}
